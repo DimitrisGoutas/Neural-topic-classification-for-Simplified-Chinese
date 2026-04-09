@@ -35,6 +35,22 @@ Neural-topic-classification-for-Simplified-Chinese/
 └── README.md
 ```
 
+## Dataset
+
+The dataset contains Simplified Chinese sentences from Wikipedia, each labeled
+with one of seven topic categories:
+
+- science/technology
+- travel
+- politics
+- sports
+- health
+- entertainment
+- geography
+
+The `data/` folder contains `train.tsv`, `dev.tsv`, `test.tsv`, and
+`labels.txt`.
+
 ## Requirements
 
 - Python 3.12
