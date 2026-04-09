@@ -126,7 +126,7 @@ python scripts/sentence_embeddings.py \
   --output_file embeddings/test_embeddings.npz
 ```
 
-Add `--use_sif` to use SIF-weighted averaging instead (see Bonus 2):
+Add `--use_sif` to use SIF-weighted averaging instead:
 
 ```bash
 python scripts/sentence_embeddings.py \
