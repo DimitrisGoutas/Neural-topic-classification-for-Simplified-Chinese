@@ -83,15 +83,6 @@ training data when computing embeddings for all splits (see Known Limitations).
 
 ---
 
-## How to Run
-
-All scripts should be run from the project root directory with the virtual
-environment activated:
-
-```bash
-source assignment3ML/bin/activate
-```
-
 ### Step 1 — Train FastText embeddings
 
 Train character-level FastText embeddings on all splits:
