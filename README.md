@@ -193,6 +193,8 @@ has learned something meaningful from the data rather than defaulting to
 random or majority-class guessing.
 
 **Confusion matrix:**
+
+```
 [[ 0  0  0  4 15  0  0]
 [ 0  0  0  8  7  2  0]
 [ 0  0  0  7 15  0  0]
@@ -200,6 +202,7 @@ random or majority-class guessing.
 [ 0  0  0  6 44  1  0]
 [ 0  0  0 13  8  4  0]
 [ 0  0  0  8 32  0  0]]
+```
 
 **Validation accuracy over training epochs:**
 
@@ -215,6 +218,8 @@ random or majority-class guessing.
 | Chance baseline (1/7) | 14.29% |
 
 **Confusion matrix:**
+
+```
 [[ 0  0  0  5 13  0  1]
 [ 0  0  0 10  7  0  0]
 [ 0  0  0  5 16  0  1]
@@ -222,6 +227,7 @@ random or majority-class guessing.
 [ 0  0  0  8 43  0  0]
 [ 0  0  0 18  6  0  1]
 [ 0  0  0  9 29  0  2]]
+```
 
 **Validation accuracy over training epochs:**
 
