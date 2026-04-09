@@ -82,7 +82,7 @@ Note: frequencies are computed from whichever files are passed via
 training data when computing embeddings for all splits (see Known Limitations).
 
 ---
-## How to run?
+## How to run
 
 ### Step 1 — Train FastText embeddings
 
