@@ -37,7 +37,10 @@ Neural-topic-classification-for-Simplified-Chinese/
 
 ## Requirements
 
-Tested on Python 3.12 in a virtual environment on `mltgpu`.
+- Python 3.12
+- Tested on `mltgpu` (University of Gothenburg)
+
+Install dependencies:
 
 ```bash
 pip install pandas numpy gensim torch scikit-learn matplotlib
