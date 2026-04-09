@@ -221,7 +221,7 @@ random or majority-class guessing.
 
 ---
 
-### SIF embeddings (Bonus 2)
+### SIF embeddings
 
 | Metric | Value |
 |---|---|
