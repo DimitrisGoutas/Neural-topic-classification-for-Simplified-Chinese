@@ -6,6 +6,7 @@ A pipeline for multiclass topic classification of Simplified Chinese sentences
 using FastText character embeddings and a feed-forward PyTorch classifier.
 
 ## Project Structure
+```
 Neural-topic-classification-for-Simplified-Chinese/
 ├── data/
 │   ├── train.tsv
@@ -31,6 +32,7 @@ Neural-topic-classification-for-Simplified-Chinese/
 ├── training_plot_plain.png
 ├── training_plot_sif.png
 └── README.md
+```
 
 ## Requirements
 
