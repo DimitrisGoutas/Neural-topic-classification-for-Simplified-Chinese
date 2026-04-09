@@ -1,0 +1,5 @@
+assignment3ML/
+embeddings/
+models/
+__pycache__/
+*.pyc
