@@ -31,6 +31,7 @@ Neural-topic-classification-for-Simplified-Chinese/
 ├── training_plot_plain.png
 ├── training_plot_sif.png
 └── README.md
+└── transcript.txt
 ```
 
 ## Dataset
