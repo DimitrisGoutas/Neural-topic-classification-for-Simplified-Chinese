@@ -42,7 +42,7 @@ def train_loop(dataloader, model, loss_fn, optimizer, device):
     avg_loss = total_loss / len(dataloader.dataset)
     return avg_loss
 
-# Bonus 1 - validation loop
+# validation loop
 def eval_loop(dataloader, model, device):
     model.eval()
     correct = 0
