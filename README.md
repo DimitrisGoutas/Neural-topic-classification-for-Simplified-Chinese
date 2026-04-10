@@ -268,6 +268,14 @@ the training process is working correctly and the embeddings carry real
 topical signal. The main bottleneck is the small dataset size and the
 relatively coarse character-level representation.
 
+## Training Curve Analysis
+
+Both plots show a similar learning pattern: validation accuracy remains flat
+for the first 2-3 epochs, then rises steadily. This suggests the model needs
+a few epochs to move away from its initial random weights before it starts
+learning useful representations. The curve is still rising at epoch 10 in
+both cases, indicating that training for more epochs might yield further
+improvement.
 ---
 
 ## Known Limitations
