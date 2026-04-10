@@ -247,25 +247,18 @@ random or majority-class guessing.
 
 ## Observations on the Confusion Matrix
 
-The most striking pattern in both matrices is that columns 0, 1, 2, and 6
-are entirely zero; the model never predicts those classes. Nearly all
-predictions land on class 3 or class 4, with class 4 attracting the majority
-of predictions across all true classes. This suggests the model has collapsed
-into predicting only the most frequent or most separable classes, likely
-because the character embeddings trained on a small corpus (701 training
-sentences) do not provide enough discriminating signal to distinguish all
-seven topics reliably.
+Both models end up predicting almost exclusively class 3 and class 4, 
+completely ignoring the other five classes. This is likely a consequence of the 
+small training set (701 sentences), as the character embeddings simply do not 
+carry enough signal to separate all seven topics, so the model defaults to the 
+two classes it can distinguish most easily.
 
-Both the plain and SIF models show the same collapsed prediction pattern, with
-SIF performing marginally worse (30.88% vs 31.37%). This is consistent with
-the known limitation that SIF frequencies were computed per-split rather than
-from the full training corpus, which weakens the weighting signal for dev and
-test splits.
+SIF comes out slightly worse (30.88% vs 31.37%), which makes sense given that 
+the character frequencies were computed separately for each split rather than 
+from the training data alone.
 
-Both models comfortably exceed the chance baseline of 14.29%, confirming that
-the training process is working correctly and the embeddings carry real
-topical signal. The main bottleneck is the small dataset size and the
-relatively coarse character-level representation.
+That said, both models are well above the 14.29% chance baseline, so the 
+pipeline is working. The bottleneck is the data, not the code.
 
 ---
 
