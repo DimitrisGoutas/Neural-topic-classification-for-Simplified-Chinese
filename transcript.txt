@@ -1,0 +1,135 @@
+gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ source assignment3ML/bin/activate
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/train_fasttext.py \
+  --input_files data/train.tsv data/dev.tsv data/test.tsv \
+  --embedding_dim 100 \
+  --epochs 5 \
+  --output_file embeddings/fasttext.model
+The model has been saved to embeddings/fasttext.model
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/sentence_embeddings.py \
+  --input_files data/train.tsv \
+  --fasttext_model embeddings/fasttext.model \
+  --output_file embeddings/train_embeddings.npz
+Saved 701 sentence embeddings to embeddings/train_embeddings.npz
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/sentence_embeddings.py \
+  --input_files data/dev.tsv \
+  --fasttext_model embeddings/fasttext.model \
+  --output_file embeddings/dev_embeddings.npz
+Saved 99 sentence embeddings to embeddings/dev_embeddings.npz
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/sentence_embeddings.py \
+  --input_files data/test.tsv \
+  --fasttext_model embeddings/fasttext.model \
+  --output_file embeddings/test_embeddings.npz
+Saved 204 sentence embeddings to embeddings/test_embeddings.npz
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/sentence_embeddings.py \
+  --input_files data/train.tsv \
+  --fasttext_model embeddings/fasttext.model \
+  --output_file embeddings/train_embeddings_sif.npz \
+  --use_sif
+Saved 701 sentence embeddings to embeddings/train_embeddings_sif.npz
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/sentence_embeddings.py \
+  --input_files data/dev.tsv \
+  --fasttext_model embeddings/fasttext.model \
+  --output_file embeddings/dev_embeddings_sif.npz \
+  --use_sif
+Saved 99 sentence embeddings to embeddings/dev_embeddings_sif.npz
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/sentence_embeddings.py \
+  --input_files data/test.tsv \
+  --fasttext_model embeddings/fasttext.model \
+  --output_file embeddings/test_embeddings_sif.npz \
+  --use_sif
+Saved 204 sentence embeddings to embeddings/test_embeddings_sif.npz
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/train_classifier.py \
+  --embeddings_file embeddings/train_embeddings.npz \
+  --val_embeddings_file embeddings/dev_embeddings.npz \
+  --epochs 10 \
+  --batch_size 32 \
+  --hidden_dim 128 \
+  --output_model models/classifier.pt \
+  --plot_file training_plot_plain.png
+/home/gusgoutdi@GU.GU.SE/Neural-topic-classification-for-Simplified-Chinese/assignment3ML/lib64/python3.12/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+Epoch 1: Train Loss=1.9103
+Validation Accuracy=0.2525
+Epoch 2: Train Loss=1.8723
+Validation Accuracy=0.2525
+Epoch 3: Train Loss=1.8317
+Validation Accuracy=0.2626
+Epoch 4: Train Loss=1.7856
+Validation Accuracy=0.3131
+Epoch 5: Train Loss=1.7547
+Validation Accuracy=0.3131
+Epoch 6: Train Loss=1.7351
+Validation Accuracy=0.3131
+Epoch 7: Train Loss=1.7176
+Validation Accuracy=0.3232
+Epoch 8: Train Loss=1.7054
+Validation Accuracy=0.3333
+Epoch 9: Train Loss=1.6950
+Validation Accuracy=0.3434
+Epoch 10: Train Loss=1.6898
+Validation Accuracy=0.3535
+Saved training_plot file
+Model saved to models/classifier.pt
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/train_classifier.py \
+  --embeddings_file embeddings/train_embeddings_sif.npz \
+  --val_embeddings_file embeddings/dev_embeddings_sif.npz \
+  --epochs 10 \
+  --batch_size 32 \
+  --hidden_dim 128 \
+  --output_model models/classifier_sif.pt \
+  --plot_file training_plot_sif.png
+/home/gusgoutdi@GU.GU.SE/Neural-topic-classification-for-Simplified-Chinese/assignment3ML/lib64/python3.12/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+Epoch 1: Train Loss=1.9263
+Validation Accuracy=0.2525
+Epoch 2: Train Loss=1.8913
+Validation Accuracy=0.2525
+Epoch 3: Train Loss=1.8456
+Validation Accuracy=0.2525
+Epoch 4: Train Loss=1.8084
+Validation Accuracy=0.2626
+Epoch 5: Train Loss=1.7729
+Validation Accuracy=0.3131
+Epoch 6: Train Loss=1.7431
+Validation Accuracy=0.3232
+Epoch 7: Train Loss=1.7186
+Validation Accuracy=0.3232
+Epoch 8: Train Loss=1.6992
+Validation Accuracy=0.3333
+Epoch 9: Train Loss=1.6844
+Validation Accuracy=0.3737
+Epoch 10: Train Loss=1.6718
+Validation Accuracy=0.3737
+Saved training_plot file
+Model saved to models/classifier_sif.pt
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/evaluate.py \
+  --embeddings_file embeddings/test_embeddings.npz \
+  --model_file models/classifier.pt
+/home/gusgoutdi@GU.GU.SE/Neural-topic-classification-for-Simplified-Chinese/assignment3ML/lib64/python3.12/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+Using device: cpu
+Test Accuracy: 31.37%
+Confusion Matrix:
+[[ 0  0  0  4 15  0  0]
+ [ 0  0  0  9  7  1  0]
+ [ 0  0  0  7 15  0  0]
+ [ 0  0  0 18 12  0  0]
+ [ 0  0  0  6 45  0  0]
+ [ 0  0  0 15  9  1  0]
+ [ 0  0  0  8 32  0  0]]
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$ python scripts/evaluate.py \
+  --embeddings_file embeddings/test_embeddings_sif.npz \
+  --model_file models/classifier_sif.pt
+/home/gusgoutdi@GU.GU.SE/Neural-topic-classification-for-Simplified-Chinese/assignment3ML/lib64/python3.12/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+Using device: cpu
+Test Accuracy: 30.88%
+Confusion Matrix:
+[[ 0  0  0  6 13  0  0]
+ [ 0  0  0 11  6  0  0]
+ [ 0  0  0  5 17  0  0]
+ [ 0  0  0 20 10  0  0]
+ [ 0  0  0  8 43  0  0]
+ [ 0  0  0 18  7  0  0]
+ [ 0  0  0 10 30  0  0]]
+((assignment3ML) ) gusgoutdi@GU.GU.SE@mltgpu:~/Neural-topic-classification-for-Simplified-Chinese$
