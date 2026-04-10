@@ -248,9 +248,9 @@ random or majority-class guessing.
 
 ## Observations on the Confusion Matrix
 
-The most striking pattern in both matrices is that columns 1, 2, 3, and 6
-are entirely zero — the model never predicts those classes. Nearly all
-predictions land on class 4 or class 5, with class 5 attracting the majority
+The most striking pattern in both matrices is that columns 0, 1, 2, and 6
+are entirely zero; the model never predicts those classes. Nearly all
+predictions land on class 3 or class 4, with class 4 attracting the majority
 of predictions across all true classes. This suggests the model has collapsed
 into predicting only the most frequent or most separable classes, likely
 because the character embeddings trained on a small corpus (701 training
@@ -267,6 +267,7 @@ Both models comfortably exceed the chance baseline of 14.29%, confirming that
 the training process is working correctly and the embeddings carry real
 topical signal. The main bottleneck is the small dataset size and the
 relatively coarse character-level representation.
+---
 
 ## Training Curve Analysis
 
@@ -276,16 +277,10 @@ a few epochs to move away from its initial random weights before it starts
 learning useful representations. The curve is still rising at epoch 10 in
 both cases, indicating that training for more epochs might yield further
 improvement.
+
 ---
 
 ## Known Limitations
-
-- **SIF frequency computation**: Ideally, character frequencies for SIF
-  weighting should be derived from the full training corpus and reused when
-  embedding dev and test splits. In the current implementation, frequencies
-  are computed from whichever files are passed to `--input_files`, meaning
-  dev and test embeddings use their own per-split frequencies. This is a
-  known approximation.
 
 - **CUDA warning**: The GPU driver on `mltgpu` is older than the PyTorch
   version expects. The model falls back to CPU automatically with no effect
