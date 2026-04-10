@@ -98,8 +98,8 @@ python scripts/train_fasttext.py \
 | Argument | Description |
 |---|---|
 | `--input_files` | One or more `.tsv` files to train on |
-| `--embedding_dim` | Dimensionality of the embeddings (default: 100) |
-| `--epochs` | Training epochs (default: 5) |
+| `--embedding_dim` | Dimensionality of the embeddings |
+| `--epochs` | Training epochs |
 | `--output_file` | Path to save the Gensim FastText model |
 
 ---
@@ -161,9 +161,9 @@ python scripts/train_classifier.py \
 |---|---|
 | `--embeddings_file` | Path to training `.npz` embeddings file |
 | `--val_embeddings_file` | (Optional) Validation `.npz` file — enables Bonus 1 accuracy tracking |
-| `--epochs` | Number of training epochs (default: 10) |
-| `--batch_size` | Batch size (default: 32) |
-| `--hidden_dim` | Hidden layer size (default: 128) |
+| `--epochs` | Number of training epochs |
+| `--batch_size` | Batch size |
+| `--hidden_dim` | Hidden layer size |
 | `--output_model` | Path to save the trained model |
 | `--plot_file` | Path to save the validation accuracy plot (default: `training_plot.png`) |
 
