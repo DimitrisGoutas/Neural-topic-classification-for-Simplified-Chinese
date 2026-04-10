@@ -1,5 +1,3 @@
-# Assignment3-Neural-topic-classification-for-Simplified-Chinese
-
 # Neural Topic Classification for Simplified Chinese
 
 A pipeline for multiclass topic classification of Simplified Chinese sentences
