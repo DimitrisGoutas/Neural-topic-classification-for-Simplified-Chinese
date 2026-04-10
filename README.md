@@ -283,6 +283,11 @@ improvement.
 
 ## Known Limitations
 
+- **SIF frequency computation**: Character frequencies are computed from 
+  whatever files are passed as input, so dev and test splits use their own 
+  frequencies instead of the training corpus. This affects the quality of 
+  the SIF weighting for those splits.
+
 - **CUDA warning**: The GPU driver on `mltgpu` is older than the PyTorch
   version expects. The model falls back to CPU automatically with no effect
   on correctness.
