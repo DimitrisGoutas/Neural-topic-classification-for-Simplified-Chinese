@@ -267,6 +267,7 @@ Both models comfortably exceed the chance baseline of 14.29%, confirming that
 the training process is working correctly and the embeddings carry real
 topical signal. The main bottleneck is the small dataset size and the
 relatively coarse character-level representation.
+
 ---
 
 ## Training Curve Analysis
